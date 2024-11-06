@@ -1,6 +1,7 @@
 {
   "name": "lk-admin",
   "private": true,
+  "homepage": "https://dortexai-admin.github",
   "version": "1.0.0",
   "type": "module",
   "scripts": {
