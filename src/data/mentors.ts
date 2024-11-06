@@ -24,7 +24,7 @@ export const mentors: Mentor[] = [
   {
     id: 1,
     name: 'Curious George',
-    title: 'UI UX Design',
+    title: 'Electrical Engineer',
     avatar: Avatar1,
     task: 40,
     rating: 4.7,
@@ -34,7 +34,7 @@ export const mentors: Mentor[] = [
   {
     id: 2,
     name: 'Abraham Lincoln',
-    title: '3D Design',
+    title: 'Plumber',
     avatar: Avatar2,
     task: 32,
     rating: 4.9,
@@ -44,7 +44,7 @@ export const mentors: Mentor[] = [
   {
     id: 3,
     name: 'Alex Stanton',
-    title: 'UI / UX Designer',
+    title: 'Car Mechanic',
     avatar: Avatar3,
     task: 60,
     rating: 4.9,
@@ -54,7 +54,7 @@ export const mentors: Mentor[] = [
   {
     id: 4,
     name: 'Richard Kyle',
-    title: '2D Design',
+    title: 'Painter',
     avatar: Avatar4,
     task: 60,
     rating: 4.7,
@@ -64,7 +64,7 @@ export const mentors: Mentor[] = [
   {
     id: 5,
     name: 'Brian Robinson',
-    title: 'Android Developer',
+    title: 'Builder',
     avatar: Avatar5,
     task: 28,
     rating: 4.8,
@@ -74,7 +74,7 @@ export const mentors: Mentor[] = [
   {
     id: 6,
     name: 'Jakob Saris',
-    title: '3D Design',
+    title: 'Software Engineer',
     avatar: Avatar6,
     task: 60,
     rating: 4.8,
@@ -84,7 +84,7 @@ export const mentors: Mentor[] = [
   {
     id: 7,
     name: 'Jeremy Zucker',
-    title: 'Web Developer',
+    title: 'Beautician',
     avatar: Avatar7,
     task: 40,
     rating: 4.7,
@@ -94,7 +94,7 @@ export const mentors: Mentor[] = [
   {
     id: 8,
     name: 'Jason Statham',
-    title: 'IOS Developer',
+    title: 'Fitness Trainer',
     avatar: Avatar8,
     task: 60,
     rating: 4.9,

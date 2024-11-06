@@ -14,8 +14,8 @@ const Footer = () => {
       fontWeight={500}
     >
       Made with ❤️ by{' '}
-      <Link href="https://themewagon.com/" target="_blank" rel="noreferrer">
-        {'ThemeWagon'}
+      <Link href="https://dortexai.com/" target="_blank" rel="noreferrer">
+        {'DortexAI'}
       </Link>
     </Typography>
   );
