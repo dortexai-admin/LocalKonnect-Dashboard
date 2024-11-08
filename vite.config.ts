@@ -15,5 +15,5 @@ export default defineConfig({
       },
     }),
   ],
-  base: process.env.GITHUB_PAGES ? '/LocalKonnect-Dashboard/' : '/',
+  base: process.env.GITHUB_PAGES ? '/LocalKonnect-Dashboard/' : '/LocalKonnect-Dashboard/',
 });
