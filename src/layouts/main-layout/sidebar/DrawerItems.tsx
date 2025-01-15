@@ -31,7 +31,7 @@ const DrawerItems = () => {
         </ButtonBase>
       </Stack>
 
-      <List component="nav" sx={{ mt: 4, mb: 15, px: 0 }}>
+      <List component="nav" sx={{ mt: 4, mb: 1, px: 0 }}>
         {sitemap.map((route) =>
           route.items ? (
             <CollapseListItem key={route.id} {...route} />

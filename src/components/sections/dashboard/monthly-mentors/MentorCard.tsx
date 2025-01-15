@@ -65,7 +65,7 @@ const MentorCard = ({ data }: MentorCardProps) => {
           <Stack alignItems="center" spacing={0.875}>
             <IconifyIcon icon="hugeicons:note" color="text.secondary" fontSize="h4.fontSize" />
             <Typography color="text.primary" fontSize="body2.fontSize" fontWeight={600}>
-              {data.task} Task
+              {data.task} Completed Services
             </Typography>
           </Stack>
           <Stack alignItems="center" spacing={0.5}>

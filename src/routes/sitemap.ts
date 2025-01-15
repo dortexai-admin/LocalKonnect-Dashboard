@@ -1,4 +1,3 @@
-import paths from './paths';
 
 export interface SubMenuItem {
   name: string;
@@ -28,22 +27,22 @@ const sitemap: MenuItem[] = [
     active: true,
   },
   {
-    id: 'task',
-    subheader: 'Task',
+    id: 'team',
+    subheader: 'Team',
     path: '#!',
     icon: 'hugeicons:book-open-01',
   },
   {
-    id: 'mentors',
-    subheader: 'Mentors',
+    id: 'permision',
+    subheader: 'Permision',
     path: '#!',
     icon: 'mynaui:user-hexagon',
   },
   {
-    id: 'messages',
-    subheader: 'Messages',
+    id: 'notifications',
+    subheader: 'Notifications',
     path: '#!',
-    icon: 'mage:message-dots',
+    icon: 'hugeicons:settings-01',
   },
   {
     id: 'settings',
@@ -51,26 +50,7 @@ const sitemap: MenuItem[] = [
     path: '#!',
     icon: 'hugeicons:settings-01',
   },
-  {
-    id: 'authentication',
-    subheader: 'Authentication',
-    icon: 'mynaui:lock-password',
-    active: true,
-    items: [
-      {
-        name: 'Sign In',
-        pathName: 'signin',
-        icon: '',
-        path: paths.signin,
-      },
-      {
-        name: 'Sign Up',
-        pathName: 'signup',
-        icon: '',
-        path: paths.signup,
-      },
-    ],
-  },
+  
 ];
 
 export default sitemap;

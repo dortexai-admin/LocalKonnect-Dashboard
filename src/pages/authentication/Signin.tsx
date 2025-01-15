@@ -1,16 +1,14 @@
 import { useState, ChangeEvent, FormEvent } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
-import Divider from '@mui/material/Divider';
 import InputAdornment from '@mui/material/InputAdornment';
-import FormControlLabel from '@mui/material/FormControlLabel';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import TextField from '@mui/material/TextField';
-import Checkbox from '@mui/material/Checkbox';
 import IconifyIcon from 'components/base/IconifyIcon';
-import paths from 'routes/paths';
+import axios from 'axios';
 
 interface User {
   [key: string]: string;
@@ -19,47 +17,46 @@ interface User {
 const Signin = () => {
   const [user, setUser] = useState<User>({ email: '', password: '' });
   const [showPassword, setShowPassword] = useState(false);
-
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(user);
+    setLoading(true);
+    setError(null);
+    console.log("cicked ")
+
+    try {
+      const response = await axios.post('https://localkonnectbackend.onrender.com/api/users/auth/login', user, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      console.log('Login successful:', response.data);
+      navigate('pages/dashboard'); 
+      // Handle successful login (e.g., store token, redirect user, etc.)
+    } catch (err) {
+      console.log('Login failed: ', err);
+      
+    } finally {
+      setLoading(false);
+
+    }
   };
 
   return (
     <>
       <Typography align="center" variant="h4">
-        Sign In
+        Log In
       </Typography>
       <Typography mt={1.5} align="center" variant="body2">
         Welcome back! Let's continue with,
       </Typography>
-
-      <Stack mt={3} spacing={1.75} width={1}>
-        <Button
-          variant="contained"
-          color="secondary"
-          fullWidth
-          startIcon={<IconifyIcon icon="logos:google-icon" />}
-          sx={{ bgcolor: 'info.main', '&:hover': { bgcolor: 'info.main' } }}
-        >
-          Google
-        </Button>
-        <Button
-          variant="contained"
-          color="secondary"
-          fullWidth
-          startIcon={<IconifyIcon icon="logos:apple" sx={{ mb: 0.5 }} />}
-          sx={{ bgcolor: 'info.main', '&:hover': { bgcolor: 'info.main' } }}
-        >
-          Apple
-        </Button>
-      </Stack>
-
-      <Divider sx={{ my: 4 }}>or Signin with</Divider>
 
       <Stack component="form" mt={3} onSubmit={handleSubmit} direction="column" gap={2}>
         <TextField
@@ -123,25 +120,22 @@ const Signin = () => {
           }}
         />
 
+        {error && (
+          <Typography color="error" align="center" variant="body2">
+            {error}
+          </Typography>
+        )}
+
         <Stack mt={-2} alignItems="center" justifyContent="space-between">
-          <FormControlLabel
-            control={<Checkbox id="checkbox" name="checkbox" size="small" color="primary" />}
-            label="Remember me"
-            sx={{ ml: -1 }}
-          />
           <Link href="#!" fontSize="body2.fontSize">
             Forgot password?
           </Link>
         </Stack>
 
-        <Button type="submit" variant="contained" size="medium" fullWidth>
-          Sign In
+        <Button type="submit" variant="contained" size="medium" fullWidth disabled={loading}>
+          {loading ? 'Logging In...' : 'Log In'}
         </Button>
       </Stack>
-
-      <Typography mt={5} variant="body2" color="text.secondary" align="center" letterSpacing={0.25}>
-        Don't have an account? <Link href={paths.signup}>Signup</Link>
-      </Typography>
     </>
   );
 };

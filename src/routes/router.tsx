@@ -11,7 +11,6 @@ const App = lazy(() => import('App'));
 const Dashboard = lazy(() => import('pages/dashboard'));
 const Signin = lazy(() => import('pages/authentication/Signin'));
 const Signup = lazy(() => import('pages/authentication/Signup'));
-
 const router = createBrowserRouter(
   [
     {
@@ -24,18 +23,12 @@ const router = createBrowserRouter(
         {
           path: '/',
           element: (
-            <MainLayout>
+            <AuthLayout>
               <Suspense fallback={<PageLoader />}>
-                <Outlet />
+                <Signin />
               </Suspense>
-            </MainLayout>
+            </AuthLayout>
           ),
-          children: [
-            {
-              index: true,
-              element: <Dashboard />,
-            },
-          ],
         },
         {
           path: rootPaths.authRoot,
@@ -55,12 +48,29 @@ const router = createBrowserRouter(
             },
           ],
         },
+        {
+          path: rootPaths.pageRoot,
+          element: (
+            <MainLayout>
+              <Suspense fallback={<PageLoader />}>
+                <Outlet />
+              </Suspense>
+            </MainLayout>
+          ),
+          children: [
+            {
+              path: paths.dashboard,
+              element: <Dashboard />,
+            },
+          ],
+        },
       ],
     },
   ],
   {
-    basename: '/LocalKonnect-Dashboard/',
+    basename: '/LocalKonnect/',
   },
 );
 
 export default router;
+
