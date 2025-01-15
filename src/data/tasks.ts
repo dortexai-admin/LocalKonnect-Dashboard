@@ -30,8 +30,8 @@ export interface Task {
 export const tasks: Task[] = [
   {
     id: 1,
-    title: 'Creating Mobile App Design',
-    category: 'UI UX Design',
+    title: 'Fixing Pipeline Issues',
+    category: 'Plumber',
     thumb: Thumb1,
     progress: 75,
     daysLeft: 3,
@@ -39,8 +39,8 @@ export const tasks: Task[] = [
   },
   {
     id: 2,
-    title: 'Creating Perfect Website',
-    category: 'Web Developer',
+    title: 'New Wire fitting in Home(2 floor)',
+    category: 'Electrician',
     thumb: Thumb2,
     progress: 85,
     daysLeft: 4,
@@ -48,8 +48,8 @@ export const tasks: Task[] = [
   },
   {
     id: 3,
-    title: 'Mobile App Design',
-    category: 'UI UX Design',
+    title: 'Hair Cut and Shave',
+    category: 'Barber',
     thumb: Thumb3,
     progress: 65,
     daysLeft: 3,
@@ -57,8 +57,8 @@ export const tasks: Task[] = [
   },
   {
     id: 4,
-    title: 'Creating Mobile Apps',
-    category: 'Android Developer',
+    title: 'Give grocery items to Customer',
+    category: 'Delivery',
     thumb: Thumb4,
     progress: 95,
     daysLeft: 1,
@@ -84,8 +84,8 @@ export const tasks: Task[] = [
   },
   {
     id: 7,
-    title: 'Creating Color Palletes',
-    category: 'UI UX Design',
+    title: 'Painting Home',
+    category: 'Painter',
     thumb: Thumb7,
     progress: 100,
     daysLeft: 1,
@@ -93,8 +93,8 @@ export const tasks: Task[] = [
   },
   {
     id: 8,
-    title: 'Awesome Flutter Apps',
-    category: 'Android Developer',
+    title: 'Foot Massage and Spa',
+    category: 'Beauty',
     thumb: Thumb8,
     progress: 75,
     daysLeft: 3,

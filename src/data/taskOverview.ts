@@ -12,7 +12,7 @@ import {
 export const rows = [
   {
     id: 1,
-    task: 'Designing Landing Page',
+    task: 'Repair Celing Light',
     members: [Avatar6, Avatar8, Avatar2],
     progress: 60,
     status: 'in progress',
@@ -20,7 +20,7 @@ export const rows = [
   },
   {
     id: 2,
-    task: 'Setting Up Analytics',
+    task: 'Setting Up New Door Bell',
     members: [Avatar1, Avatar7, Avatar3, Avatar8],
     progress: 100,
     status: 'completed',
@@ -28,7 +28,7 @@ export const rows = [
   },
   {
     id: 3,
-    task: 'Fixing Critical Bugs',
+    task: 'Fixing Critical Wiring Bugs',
     members: [Avatar2, Avatar5, Avatar8, Avatar4, Avatar7, Avatar1],
     progress: 100,
     status: 'completed',
@@ -44,7 +44,7 @@ export const rows = [
   },
   {
     id: 5,
-    task: 'Fixing UI/UX Issues',
+    task: 'Fixing Peast Issues',
     members: [Avatar7, Avatar4, Avatar1, Avatar5, Avatar2],
     progress: 0,
     status: 'pending',
@@ -60,7 +60,7 @@ export const rows = [
   },
   {
     id: 7,
-    task: 'Conducting User Testing',
+    task: 'Conducting Testing',
     members: [Avatar5, Avatar2, Avatar7, Avatar3, Avatar1],
     progress: 100,
     status: 'completed',
@@ -68,7 +68,7 @@ export const rows = [
   },
   {
     id: 8,
-    task: 'Planning Product Launch',
+    task: 'Planning Home Launch',
     members: [Avatar3, Avatar1, Avatar6],
     progress: 55,
     status: 'in progress',
@@ -84,7 +84,7 @@ export const rows = [
   },
   {
     id: 10,
-    task: 'Deploying Application',
+    task: 'fix pipeline of bathroom',
     members: [Avatar5, Avatar2],
     progress: 0,
     status: 'pending',
