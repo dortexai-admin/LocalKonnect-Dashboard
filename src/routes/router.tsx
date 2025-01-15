@@ -1,6 +1,6 @@
 /* eslint-disable react-refresh/only-export-components */
 import { Suspense, lazy } from 'react';
-import { Outlet, createBrowserRouter } from 'react-router-dom';
+import { Navigate, Outlet, createBrowserRouter } from 'react-router-dom';
 import paths, { rootPaths } from './paths';
 import MainLayout from 'layouts/main-layout';
 import AuthLayout from 'layouts/auth-layout';
@@ -11,6 +11,16 @@ const App = lazy(() => import('App'));
 const Dashboard = lazy(() => import('pages/dashboard'));
 const Signin = lazy(() => import('pages/authentication/Signin'));
 const Signup = lazy(() => import('pages/authentication/Signup'));
+
+/**
+ * Route Guard Component
+ * Redirects to / if no token is found in localStorage
+ */
+const ProtectedRoute = ({ children }: { children: JSX.Element }) => {
+  const token = localStorage.getItem('token');
+  return token ? children : <Navigate to="/" />;
+};
+
 const router = createBrowserRouter(
   [
     {
@@ -20,6 +30,7 @@ const router = createBrowserRouter(
         </Suspense>
       ),
       children: [
+        // Public Routes (Signin and Signup)
         {
           path: '/',
           element: (
@@ -48,14 +59,17 @@ const router = createBrowserRouter(
             },
           ],
         },
+        // Protected Routes (Everything else is protected)
         {
           path: rootPaths.pageRoot,
           element: (
-            <MainLayout>
-              <Suspense fallback={<PageLoader />}>
-                <Outlet />
-              </Suspense>
-            </MainLayout>
+            <ProtectedRoute>
+              <MainLayout>
+                <Suspense fallback={<PageLoader />}>
+                  <Outlet />
+                </Suspense>
+              </MainLayout>
+            </ProtectedRoute>
           ),
           children: [
             {
@@ -73,4 +87,3 @@ const router = createBrowserRouter(
 );
 
 export default router;
-

@@ -28,27 +28,30 @@ const Signin = () => {
     e.preventDefault();
     setLoading(true);
     setError(null);
-    console.log("cicked ")
-
+  
     try {
       const response = await axios.post('https://localkonnectbackend.onrender.com/api/users/auth/login', user, {
         headers: {
           'Content-Type': 'application/json',
         },
       });
-
+  
+      const { token, user: userInfo } = response.data;
+  
+      // Store token and user information in localStorage
+      localStorage.setItem('token', token);
+      localStorage.setItem('user', JSON.stringify(userInfo));
+  
       console.log('Login successful:', response.data);
-      navigate('pages/dashboard'); 
-      // Handle successful login (e.g., store token, redirect user, etc.)
+      navigate('pages/dashboard'); // Navigate to dashboard
     } catch (err) {
-      console.log('Login failed: ', err);
-      
+      console.log('Login failed:', err);
     } finally {
       setLoading(false);
-
     }
   };
-
+  
+  
   return (
     <>
       <Typography align="center" variant="h4">

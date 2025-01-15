@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Avatar3 } from 'data/images';
 import Menu from '@mui/material/Menu';
 import Box from '@mui/material/Box';
@@ -43,16 +44,22 @@ const menuItems: MenuItems[] = [
     title: 'Help Center',
     icon: 'carbon:help',
   },
-  {
-    id: 6,
-    title: 'Logout',
-    icon: 'hugeicons:logout-03',
-  },
 ];
 
 const ProfileMenu = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const [email, setEmail] = useState<string | null>(null);
+  const navigate = useNavigate();
   const open = Boolean(anchorEl);
+
+  // Fetch email from localStorage
+  useEffect(() => {
+    const storedUser = localStorage.getItem('user');
+    if (storedUser) {
+      const user = JSON.parse(storedUser);
+      setEmail(user.email);
+    }
+  }, []);
 
   const handleProfileClick = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
@@ -60,6 +67,13 @@ const ProfileMenu = () => {
 
   const handleProfileMenuClose = () => {
     setAnchorEl(null);
+  };
+
+  const handleLogout = () => {
+    // Clear token and user information from localStorage
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    navigate('/'); // Redirect to login page
   };
 
   return (
@@ -102,10 +116,7 @@ const ProfileMenu = () => {
             <Avatar src={Avatar3} sx={{ mr: 1, height: 42, width: 42 }} />
             <Stack direction="column">
               <Typography variant="body2" color="text.primary" fontWeight={600}>
-                Alex Stanton
-              </Typography>
-              <Typography variant="caption" color="text.secondary" fontWeight={400}>
-                alex@example.com
+              {email || 'Unknown Email'}
               </Typography>
             </Stack>
           </MenuItem>
@@ -126,6 +137,15 @@ const ProfileMenu = () => {
               </MenuItem>
             );
           })}
+          {/* Logout Item */}
+          <MenuItem onClick={handleLogout} sx={{ py: 1, mt: 1, bgcolor: 'error.light' }}>
+            <ListItemIcon sx={{ mr: 1, color: 'error.main', fontSize: 'h5.fontSize' }}>
+              <IconifyIcon icon="hugeicons:logout-03" />
+            </ListItemIcon>
+            <Typography variant="body2" color="error.main" fontWeight={500}>
+              Logout
+            </Typography>
+          </MenuItem>
         </Box>
       </Menu>
     </>
