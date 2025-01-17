@@ -1,9 +1,7 @@
-
-const TeamBoard = () => {
+const Team = () => {
   return (
-    
     <h1>Team Managers</h1>
   );
 };
 
-export default TeamBoard;
+export default Team;

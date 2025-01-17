@@ -9,6 +9,8 @@ import PageLoader from 'components/loader/PageLoader';
 
 const App = lazy(() => import('App'));
 const Dashboard = lazy(() => import('pages/dashboard'));
+const Team = lazy(() => import('pages/team'));
+const Permision = lazy(() => import('pages/permision'));
 const Signin = lazy(() => import('pages/authentication/Signin'));
 const Signup = lazy(() => import('pages/authentication/Signup'));
 
@@ -75,6 +77,14 @@ const router = createBrowserRouter(
             {
               path: paths.dashboard,
               element: <Dashboard />,
+            },
+            {
+              path: paths.team,
+              element: <Team />,
+            },
+            {
+              path: paths.permision,
+              element: <Permision />,
             },
           ],
         },

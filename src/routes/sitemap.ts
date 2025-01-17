@@ -29,25 +29,19 @@ const sitemap: MenuItem[] = [
   {
     id: 'team',
     subheader: 'Team',
-    path: '#!',
+    path: '/pages/team/',
     icon: 'hugeicons:book-open-01',
   },
   {
     id: 'permision',
     subheader: 'Permision',
-    path: '#!',
+    path: '/pages/permision/',
     icon: 'mynaui:user-hexagon',
   },
   {
     id: 'auditlog',
     subheader: 'Audit Log',
-    path: '#!',
-    icon: 'hugeicons:settings-01',
-  },
-  {
-    id: 'settings',
-    subheader: 'Settings',
-    path: '#!',
+    path: '/pages/auditlog',
     icon: 'hugeicons:settings-01',
   },
   
