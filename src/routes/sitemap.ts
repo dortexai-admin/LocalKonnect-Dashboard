@@ -22,7 +22,7 @@ const sitemap: MenuItem[] = [
   {
     id: 'dashboard',
     subheader: 'Overview',
-    path: '/',
+    path: '/pages/dashboard/',
     icon: 'hugeicons:grid-view',
     active: true,
   },
@@ -39,8 +39,8 @@ const sitemap: MenuItem[] = [
     icon: 'mynaui:user-hexagon',
   },
   {
-    id: 'notifications',
-    subheader: 'Notifications',
+    id: 'auditlog',
+    subheader: 'Audit Log',
     path: '#!',
     icon: 'hugeicons:settings-01',
   },

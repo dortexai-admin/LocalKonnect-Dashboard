@@ -39,7 +39,7 @@ const Activity = () => {
     <Paper sx={{ flex: 1, bgcolor: 'info.main' }}>
       <Stack alignItems="center" justifyContent="space-between" mt={-0.5}>
         <Typography variant="body1" color="text.primary" fontWeight={700}>
-          Activity
+          Activity (Jobs)
         </Typography>
 
         <FormControl

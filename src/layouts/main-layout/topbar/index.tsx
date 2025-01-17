@@ -38,7 +38,7 @@ const Topbar = ({ isClosing, mobileOpen, setMobileOpen }: TopbarProps) => {
       <Stack spacing={{ xs: 1, sm: 2 }} alignItems="center">
         <ButtonBase
           component={Link}
-          href="/"
+          href="/pages/dashboard/"
           disableRipple
           sx={{ lineHeight: 0, display: { xs: 'none', sm: 'block', lg: 'none' } }}
         >
@@ -57,16 +57,16 @@ const Topbar = ({ isClosing, mobileOpen, setMobileOpen }: TopbarProps) => {
           </IconButton>
         </Toolbar>
 
-        <Toolbar sx={{ display: { xm: 'block', md: 'none' } }}>
+        {/* <Toolbar sx={{ display: { xm: 'block', md: 'none' } }}>
           <IconButton size="large" edge="start" color="inherit" aria-label="search">
             <IconifyIcon icon="mynaui:search" />
           </IconButton>
-        </Toolbar>
+        </Toolbar> */}
 
         <TextField
           variant="filled"
           placeholder="Search"
-          sx={{ width: 350, display: { xs: 'none', md: 'flex' } }}
+          sx={{ width: 'auto', display: { md: 'block' } }}
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">

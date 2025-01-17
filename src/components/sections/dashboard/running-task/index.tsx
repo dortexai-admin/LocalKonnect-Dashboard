@@ -36,7 +36,7 @@ const RunningTask = () => {
         {/* <RunningTaskChart data={chartData} sx={{ width: 76, height: '76px !important' }} /> */}
         <Box>
           <Typography variant="h5" fontWeight={600} color="info.lighter">
-            150
+            250
           </Typography>
           <Typography variant="subtitle2" color="text.disabled" mt={0.5}>
             Service Providers

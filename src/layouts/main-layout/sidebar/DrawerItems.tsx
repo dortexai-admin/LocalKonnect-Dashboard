@@ -23,7 +23,7 @@ const DrawerItems = () => {
         bgcolor="info.lighter"
         zIndex={1000}
       >
-        <ButtonBase component={Link} href="/" disableRipple>
+        <ButtonBase component={Link} href="/pages/dashboard/" disableRipple>
           <Image src={LogoImg} alt="logo" height={40} width={40} sx={{ mr: 1.25 }} />
           <Typography variant="h3" color="text.primary" letterSpacing={1}>
             Local Konnect

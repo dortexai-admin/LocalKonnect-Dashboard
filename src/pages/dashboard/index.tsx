@@ -1,8 +1,10 @@
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Activity from 'components/sections/dashboard/activity';
-// import TaskToday from 'components/sections/dashboard/task-today';
-import RunningTask from 'components/sections/dashboard/running-task';
+import TaskToday from 'components/sections/dashboard/task-today';
+import MoneyCard from 'components/sections/dashboard/money-cards';
+import PeopleCard from 'components/sections/dashboard/people-cards';
+// import RunningTask from 'components/sections/dashboard/running-task';
 import WeekCalendar from 'components/sections/dashboard/week-calendar';
 import MonthlyMentors from 'components/sections/dashboard/monthly-mentors';
 // import Footer from 'components/common/Footer';
@@ -10,14 +12,18 @@ import MonthlyMentors from 'components/sections/dashboard/monthly-mentors';
 const Dashboard = () => {
   return (
     <Stack direction={{ xs: 'column', md: 'row' }}>
-      <Stack p={3.5} spacing={3.5} direction="column" width={{ xs: 1, md: 'calc(100% - 460px)' }}>
+      <Stack p={3.5} spacing={3.5} direction="column" width={{ xs: 1, md: 'calc(100% - 300px)' }}>
+        
+        <Activity />
+        
         <Stack
           width={1}
           spacing={3.5}
-          direction={{ xs: 'column', sm: 'row', md: 'column', xl: 'row' }}
+          direction={{ xs: 'column', sm: 'row', md: 'column', xl: 'column' }}
         >
-          <RunningTask />
-          <Activity />
+          <MoneyCard />
+          <PeopleCard />
+          {/* <RunningTask /> */}
         </Stack>
 
         <MonthlyMentors />
@@ -44,7 +50,7 @@ const Dashboard = () => {
       >
         <Stack p={3.5} spacing={3.5} width={1} direction="column">
           <WeekCalendar />
-          {/* <TaskToday /> */}
+          <TaskToday />
         </Stack>
 
         <Box display={{ xs: 'block', md: 'none' }}>
